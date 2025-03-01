@@ -76,11 +76,14 @@ vim.keymap.set('n', '<down>', function()
   require 'notify' 'Use j to move'
 end)
 
+vim.keymap.set('n', '<leader>cr', ':IncRename ')
+vim.keymap.set('n', '<leader>cr', function()
+  return ':IncRename ' .. vim.fn.expand '<cword>'
+end, { expr = true })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
 -- The following code creates a keymap to toggle inlay hints in your
 -- code, if the language server you are using supports them
 --
