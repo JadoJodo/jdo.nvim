@@ -84,16 +84,12 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
--- The following code creates a keymap to toggle inlay hints in your
--- code, if the language server you are using supports them
---
--- This may be unwanted, since they displace some of your code
 if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-  vim.keymap.set('n', '<leader>th', function()
+  vim.keymap.set('n', '<leader>ch', function()
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-  end, '[T]oggle Inlay [H]ints')
+  end, 'Toggle [C]ode [H]ints')
 end
-
+vim.keymap.set('n', '<leader>cr', '<cmd>Telescope lsp_definitions<cr>', { desc = 'Show [C]ode [R]eferences' })
 -- Setup lazy.nvim
 require('lazy').setup {
   spec = {
