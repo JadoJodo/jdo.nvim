@@ -42,10 +42,11 @@ return {
 
     -- Document existing key chains
     spec = {
+      { '<leader>b', group = '[b]uffer', mode = { 'n' } },
       { '<leader>c', group = '[C]ode', mode = { 'n', 'x' }, icon = '' },
       { '<leader>d', group = '[D]ocument' },
       { '<leader>f', group = '[F]ile', icon = '󰈔' },
-      { '<leader>g', group = '[G]it', icon = '' },
+      { '<leader>g', group = '[G]oto', icon = '' },
       { '<leader>o', group = '[O]pen', icon = '' },
       { '<leader>r', group = '[R]un' },
       { '<leader>s', group = '[S]earch', icon = '󰥩' },
