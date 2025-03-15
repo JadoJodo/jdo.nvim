@@ -49,7 +49,9 @@ require('lazy').setup {
   spec = {
     { import = 'plugins' },
   },
-  install = { colorscheme = { 'habamax' } },
+  install = { colorscheme = { 'challenger_deep' } },
   checker = { enabled = true },
 }
+
+vim.cmd [[colorscheme challenger_deep]]
 -- vim: ts=2 sts=2 sw=2 et
