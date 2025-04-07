@@ -42,7 +42,9 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.termguicolors = true
-
+vim.g.markdown_fenced_languages = {
+  'ts=typescript',
+}
 require 'config.keymaps'
 -- Setup lazy.nvim
 require('lazy').setup {

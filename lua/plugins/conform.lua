@@ -45,6 +45,7 @@ return { -- Autoformat
       markdown = { 'prettier' },
       graphql = { 'prettier' },
       md = { 'markdownlint' },
+      xml = { 'xmlstarlet' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --
