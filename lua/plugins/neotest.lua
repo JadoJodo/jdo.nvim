@@ -12,7 +12,9 @@ return {
       require('neotest').setup {
         adapters = {
           require 'neotest-pest' {
-            sail_enabled = true,
+            sail_enabled = function()
+              return false
+            end,
             parallel = function()
               return #vim.loop.cpu_info()
             end,

@@ -35,6 +35,7 @@ return { -- Autocompletion
             menu = 50,
             abbr = 50,
           },
+          symbol_map = { Supermaven = '' },
           ellipsis_char = '...',
           show_labelDetails = true,
 
@@ -94,6 +95,7 @@ return { -- Autocompletion
         end, { 'i', 's' }),
       },
       sources = {
+        { name = 'supermaven' },
         { name = 'nvim_lsp_signature_help' },
         {
           name = 'lazydev',

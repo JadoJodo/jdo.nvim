@@ -6,8 +6,45 @@ return {
     vim.opt.splitkeep = 'screen'
   end,
   opts = {
+    bottom = {
+      {
+        ft = 'toggleterm',
+        size = { height = 0.4 },
+        filter = function(buf, win)
+          return vim.api.nvim_win_get_config(win).relative == ''
+        end,
+      },
+      {
+        ft = 'noice',
+        size = { height = 0.4 },
+        filter = function(buf, win)
+          return vim.api.nvim_win_get_config(win).relative == ''
+        end,
+      },
+    },
+    -- left = {
+    --   {
+    --     title = 'Oil',
+    --     ft = 'oil',
+    --     filter = function(buf)
+    --       return vim.bo[buf].filetype == 'oil'
+    --     end,
+    --     size = { height = 0.5 },
+    --     open = 'Oil .',
+    --     pinned = true,
+    --     collapsed = false,
+    --   },
+    --   {
+    --     title = function()
+    --       local buf_name = vim.api.nvim_buf_get_name(0) or '[No Name]'
+    --       return vim.fn.fnamemodify(buf_name, ':t')
+    --     end,
+    --     ft = 'Outline',
+    --     pinned = true,
+    --     open = 'SymbolsOutlineOpen',
+    --   },
+    -- },
     right = {
-      -- Aider terminal (positioned first to appear above)
       {
         ft = 'snacks_terminal',
         size = { width = 0.4 },

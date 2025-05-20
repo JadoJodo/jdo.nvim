@@ -13,17 +13,17 @@ return { -- Collection of various small independent plugins/modules
         return '%2l:%-2v'
       end,
     }
-    require('mini.files').setup {
-      windows = {
-        preview = true,
-      },
-      vim.api.nvim_create_autocmd('User', {
-        pattern = 'MiniFilesActionRename',
-        callback = function(event)
-          Snacks.rename.on_rename_file(event.data.from, event.data.to)
-        end,
-      }),
-    }
+    -- require('mini.files').setup {
+    --   windows = {
+    --     preview = true,
+    --   },
+    --   vim.api.nvim_create_autocmd('User', {
+    --     pattern = 'MiniFilesActionRename',
+    --     callback = function(event)
+    --       Snacks.rename.on_rename_file(event.data.from, event.data.to)
+    --     end,
+    --   }),
+    -- }
     require('mini.animate').setup()
     require('mini.notify').setup()
   end,
